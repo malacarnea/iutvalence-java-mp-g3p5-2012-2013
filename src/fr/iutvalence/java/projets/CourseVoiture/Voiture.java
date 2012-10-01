@@ -1,65 +1,122 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
-// FIXME écrire un commentaire
+/**
+ * classe qui dÃ©finie les caractÃ©ristique d'une voiture
+ */
 public class Voiture
 {
-	//couleur définie ici ???
-	//taille
-	
-	// FIXME écrire un commentaire
-	// FIXME réfléchir au type de l'attribut
+
+	// FIXME rï¿½flï¿½chir au type de l'attribut
 	// FIXME la couleur peut-elle changer en cours de partie ?
+	/**
+	 * chaque voiture est dÃ©finie par sa couleur
+	 * elle peut Ãªtre modifiÃ©e en cours de partie, entre chaque course
+	 */
 	private char couleur;
 	
-	// FIXME écrire un commentaire
-	// FIXME toutes les voiture ont la même taille paramétrable ?
+	// FIXME toutes les voiture ont la mï¿½me taille paramï¿½trable ?
 	// FIXME la taille peut-elle changer en cours de partie ?
-	private static int taille;
-	
-	// FIXME écrire un commentaire
+	/**
+	 * la taille d'une voiture est calculÃ©e par le nombre de cases qu'elle prend dans la grille.
+	 * En dÃ©but de jeu, toutes les voitures ont la mÃªme taille (c'est donc une variable non paramÃ©trable
+	 * par l'utilisateur).
+	 * Chaque voiture (chaque joueur) a sa propre taille, elle n'est pas la mÃªme tout le temps
+	 * elle peut Ã©voluer pendant le jeu (si elle rÃ©trÃ©cie ou grossie).
+	 */
+	private int taille;
+
+	/**
+	 * la position de la voiture est une des caractÃ¨ristique de voiture 
+	 * elle est dÃ©finie grÃ¢ce Ã  la classe Position
+	 */
 	private Position position; 
 
   
-	// FIXME écrire un commentaire
-	public Voiture(Position position,char couleur)
+	// FIXME ï¿½crire un commentaire
+	/**
+	 * 
+	 * @param position
+	 * @param couleur
+	 */
+	public Voiture(Position position,char couleur, int taille)
 	  {
 	  	super();
 	  	this.position = position;
-	  	this.couleur=couleur;
+	  	this.couleur = couleur;
+	  	this.taille = taille;
 	  }
 	
-	// FIXME écrire un commentaire
+	// FIXME ï¿½crire un commentaire
+	/**
+	 * retourne la couleur de la voiture (un de ces paramÃ¨tres)
+	 * @return
+	 */
 	  public char getCouleur()
 	{
 		return couleur;
 	}
 	 
-	// FIXME écrire un commentaire  
+	// FIXME ï¿½crire un commentaire  
+	  /**
+	   * 
+	   * @param couleur
+	   */
 	public void setCouleur(char couleur)
 	{
 		this.couleur = couleur;
 	}
 
-	// FIXME écrire un commentaire  
+	// FIXME ï¿½crire un commentaire  
+	/**
+	 * 
+	 * @return
+	 */
 	public Position getPosition()
 	{
 		return position;
 	}
 
-	// FIXME écrire un commentaire  
+	// FIXME ï¿½crire un commentaire  
+	/**
+	 * 
+	 * @param position
+	 */
 	public void setPosition(Position position)
 	{
 		this.position = position;
 	}
 
-	/*actions effectuées par la voiture*/
+	// Actions effectuÃ©es par la voiture
 	
-	// FIXME corriger le commentaire  
 	/**
-	   * avance si on appuie sur la fléche du haut
-	   */	
-public void avancer()
-  {
-	  
-  }
-
+	 * monte la voiture d'une case vers le haut
+	 */
+	public void haut()
+	{
+	 // la position de la voiture {x,y} <-- {x,y+1} 
+	}
+	
+	/**
+	 * descend la voiture d'une case vers le bas
+	 */	
+	public void bas()
+	  {
+		 // la position de la voiture {x,y} <-- {x,y-1} 
+	  }
+	
+	/**
+	 * dÃ©cale la voiture d'une case vers la gauche
+	 */
+	public void gauche()
+	  {
+		 // la position de la voiture {x,y} <-- {x-1,y} 
+	  }
+	
+	/**
+	 * dÃ©cale la voiture d'une case vers la droite
+	 */
+	public void droite()
+	  {
+		 // la position de la voiture {x,y} <-- {x+1,y} 
+	  }
+}
