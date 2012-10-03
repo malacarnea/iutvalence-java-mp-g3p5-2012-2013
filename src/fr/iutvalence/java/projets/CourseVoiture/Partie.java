@@ -37,12 +37,10 @@ public class Partie
 	private boolean quitter; 
 	
 	/**
-	 * déclaration d'un voiture, qui est choisie par l'utilisateur en fonction de sa couleur
+	 * déclaration d'une voiture, qui est choisie par l'utilisateur en fonction de sa couleur
 	 */
 	private Voiture voiture;
 	
-	// FIXME est-il pertinent de fixer "quitter" depuis l'extérieur ?
-	// FIXME est-il pertinent de fixer "nbTourCourant" depuis l'extérieur ?
 	/**
 	 * instanciation des paramètres définissant une partie
 	 * @param nbtour

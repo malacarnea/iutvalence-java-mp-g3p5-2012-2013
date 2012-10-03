@@ -6,24 +6,20 @@ package fr.iutvalence.java.projets.CourseVoiture;
 public class Voiture
 {
 
-	// FIXME r�fl�chir au type de l'attribut
-	// FIXME la couleur peut-elle changer en cours de partie ?
-	/**
-	 * chaque voiture est définie par sa couleur
-	 * elle peut être modifiée en cours de partie, entre chaque course
-	 */
-	private char couleur;
 	
-	// FIXME toutes les voiture ont la m�me taille param�trable ?
-	// FIXME la taille peut-elle changer en cours de partie ?
+	/**
+	 * chaque voiture est définie par sa couleur qui ne change pas pour le moment
+	 * la couleur est désignée par un char : R=rouge, V=vert...
+	 */
+	private final char couleur;
+	
 	/**
 	 * la taille d'une voiture est calculée par le nombre de cases qu'elle prend dans la grille.
 	 * En début de jeu, toutes les voitures ont la même taille (c'est donc une variable non paramétrable
 	 * par l'utilisateur).
-	 * Chaque voiture (chaque joueur) a sa propre taille, elle n'est pas la même tout le temps
-	 * elle peut évoluer pendant le jeu (si elle rétrécie ou grossie).
+	 * Chaque voiture (chaque joueur) a sa propre taille, 
 	 */
-	private int taille;
+	private final int taille;
 
 	/**
 	 * la position de la voiture est une des caractèristique de voiture 
@@ -32,53 +28,41 @@ public class Voiture
 	private Position position; 
 
   
-	// FIXME �crire un commentaire
 	/**
-	 * 
+	 * constructeur de Voiture
 	 * @param position
 	 * @param couleur
+	 * @param taille
+	 * création de voiture de Position p, Couleur c et taille 1
 	 */
-	public Voiture(Position position,char couleur, int taille)
+	public Voiture(Position p,char c)
 	  {
 	  	super();
-	  	this.position = position;
-	  	this.couleur = couleur;
-	  	this.taille = taille;
+	  	this.position = p;
+	  	this.couleur = c;
+	  	this.taille = 1;
 	  }
 	
-	// FIXME �crire un commentaire
 	/**
-	 * retourne la couleur de la voiture (un de ces paramètres)
-	 * @return
+	 * permet de "lire" la couleur de la voiture (un de ces paramètres)
+	 * @return couleure
 	 */
 	  public char getCouleur()
 	{
 		return couleur;
 	}
 	 
-	// FIXME �crire un commentaire  
-	  /**
-	   * 
-	   * @param couleur
-	   */
-	public void setCouleur(char couleur)
-	{
-		this.couleur = couleur;
-	}
-
-	// FIXME �crire un commentaire  
 	/**
-	 * 
-	 * @return
+	 * permet d'obtenir la position depuis l'extérieur
+	 * @return Position
 	 */
 	public Position getPosition()
 	{
 		return position;
 	}
-
-	// FIXME �crire un commentaire  
+	
 	/**
-	 * 
+	 * permet de modifier la position depuis l'extérieur
 	 * @param position
 	 */
 	public void setPosition(Position position)
