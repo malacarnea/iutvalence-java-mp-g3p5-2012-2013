@@ -1,18 +1,18 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
 /**
- * classe qui définie les caractéristique d'une voiture
+ * classe qui définit les caractéristique d'une voiture
  */
 public class Voiture
 {
-
-	
 	/**
 	 * chaque voiture est définie par sa couleur qui ne change pas pour le moment
 	 * la couleur est désignée par un char : R=rouge, V=vert...
 	 */
+	// FIXME ne pas utiliser de caractère pour représenter la couleur, mais des constantes
 	private final char couleur;
 	
+	// FIXME laisser la taille de côté pour le moment
 	/**
 	 * la taille d'une voiture est calculée par le nombre de cases qu'elle prend dans la grille.
 	 * En début de jeu, toutes les voitures ont la même taille (c'est donc une variable non paramétrable
@@ -27,7 +27,7 @@ public class Voiture
 	 */
 	private Position position; 
 
-  
+	// FIXME compléter le commentaire
 	/**
 	 * constructeur de Voiture
 	 * @param position
@@ -43,6 +43,7 @@ public class Voiture
 	  	this.taille = 1;
 	  }
 	
+	// FIXME corriger le commentaire
 	/**
 	 * permet de "lire" la couleur de la voiture (un de ces paramètres)
 	 * @return couleure
@@ -52,6 +53,7 @@ public class Voiture
 		return couleur;
 	}
 	 
+	 // FIXME corriger le commentaire
 	/**
 	 * permet d'obtenir la position depuis l'extérieur
 	 * @return Position
@@ -61,6 +63,7 @@ public class Voiture
 		return position;
 	}
 	
+	// FIXME corriger le commentaire
 	/**
 	 * permet de modifier la position depuis l'extérieur
 	 * @param position

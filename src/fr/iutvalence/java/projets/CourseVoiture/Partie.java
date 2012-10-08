@@ -17,18 +17,24 @@ public class Partie
 //DEBUT : quand on appuie sur le bouton "start"
 //choix de la voiture, choix de tours de circuit
 	
+	// FIXME corriger le commentaire
 	/**
 	 * variable determinant le nombre de tours qui doit être fait pour réussir la course/valider le circuit
 	 * elle est définie par le joueur
 	 */
+	// FIXME respecter les conventions d'écriture
+	// FIXME renommer l'attribut
 	private int nbtour;
 	
-
+	// FIXME corriger le commentaire
 	/**
 	 * variable qui compte le nombre de tour actuel
 	 */
+	// FIXME respecter les conventions d'écriture
+	// FIXME renommer l'attribut	
 	private int nbtourcourant;
 	
+	// FIXME corriger le commentaire
 	/**
 	 * variable qui détermine quand est-ce que la partie est finie
 	 * si quitter = 1 --> on stop la boucle pour terminer la partie
@@ -36,11 +42,13 @@ public class Partie
 	 */
 	private boolean quitter; 
 	
+	// FIXME corriger le commentaire
 	/**
 	 * déclaration d'une voiture, qui est choisie par l'utilisateur en fonction de sa couleur
 	 */
 	private Voiture voiture;
 	
+	// FIXME compléter le commentaire
 	/**
 	 * instanciation des paramètres définissant une partie
 	 * @param nbtour
@@ -53,12 +61,15 @@ public class Partie
 		//this.nbtourcourant = nbtourcourant = 0;
 		//this.quitter = quitter;
 		this.voiture = voiture;
+		
+		// FIXME tous les attributs doivent être initialisés
 	}	
 	
 
 	/**
 	 * boucle qui incrémente la variable nbtourcourant à chaque fois qu'on a fais un tour
 	 */
+	// FIXME respecter les conventions d'écriture
 	public int getNbtourcourant()
 	{ 
 		/* Boucle : tant qu'on a pas fais le nb de tour d'une course prédéfinie avant par l'utilsateur, 

@@ -8,6 +8,7 @@ public class Circuit
 	
 	// reste à définir des méthodes...
 	
+	// FIXME corriger le commentaire
 	/**
 	 * Il faut faire un tableau / une grille d'entiers qui nous permettra de determiner le circuit :
 	 * dans chaque case on aura soit :
@@ -16,10 +17,13 @@ public class Circuit
 	 * 2 pour un obstacle (il peut être un bonus et donc modifier les paramètres de voiture, il peut
 	 * se déplacer ?)
 	 */
+	private int[][] tab;
 	
-	private int tab [][];
+	// FIXME écrire un commentaire
 	private int niveau;
 	
+	
+	// FIXME écrire un commentaire
 	//circuit de base
 	public Circuit(int niveau)
 	{	
@@ -96,5 +100,6 @@ public class Circuit
 		}
 	}
 	
+	// FIXME redéfinir toString et écrire un test
 
 }

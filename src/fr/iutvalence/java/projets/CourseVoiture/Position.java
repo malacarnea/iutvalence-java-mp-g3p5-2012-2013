@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
+// FIXME corriger le commentaire
 /**
  * classe informant sur la postion de la voiture sur le circuit
  */
@@ -15,6 +16,7 @@ public class Position
 	 */
 	private final int y;
 
+	// FIXME corriger le commentaire
 	/**
 	 * instanciation de x et de y
 	 * @param x
@@ -47,5 +49,8 @@ public class Position
 	
 	// Position translate(int dx, int dy){...}
 	
+	// FIXME redéfinir toString
+	
+	// FIXME redéfinir equals et hashCode
 	
 }
