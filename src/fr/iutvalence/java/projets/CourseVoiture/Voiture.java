@@ -34,8 +34,9 @@ public class Voiture extends Position
 	 * @param x : abscisse s'obtient avec les métodes de la classe Position
 	 *	@param y : ordonnée, cf x
 	 * @param couleur : entier correspondant à une couleur
+	 * @throws CIE 
 	 */
-	public Voiture(int x, int y,int c)
+	public Voiture(int x, int y,int c) throws CIE
 	  {
 	  	super(x, y);
 	  	this.couleur = c;

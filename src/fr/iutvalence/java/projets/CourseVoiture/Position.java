@@ -1,6 +1,6 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
-// FIXME corriger le commentaire
+// FIXME (fixed) corriger le commentaire
 /**
  * classe informant sur la postion de la voiture sur le circuit
  * donne l'abscisse x et l'ordonnée y
@@ -10,11 +10,11 @@ public class Position
 	/**
 	 * constante donnant la borne inferieur, est la même pour x et y (le circuit étant carré)
 	 */
-	private final static int MIN= 0;
+		public final static int MIN= 0;
 	/**
 	 * constante donnant la borne supérieur, est la même pour x et y
 	 */
-	private final static int MAX= 16;
+	public final static int MAX= 17;
 	
 	/**
 	 * x est la position de la voiture en abscisse (le numéro de la colonne)
@@ -26,7 +26,7 @@ public class Position
 	 */
 	private final int y;
 
-	// FIXME corriger le commentaire
+	// FIXME (fixed) corriger le commentaire
 	/**
 	 * crée un objet Position prenant en paramètre l'abscisse et l'ordonnée
 	 * retourne une exception si x0 ou y0 ne sont pas dans les bornes

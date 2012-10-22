@@ -8,23 +8,30 @@ public class Circuit
 	
 	// reste à définir des méthodes...
 	
+	
 	// FIXME corriger le commentaire
 	/**
 	 * Il faut faire un tableau / une grille d'entiers qui nous permettra de determiner le circuit :
 	 * dans chaque case on aura soit :
 	 * 1 pour rien (endroit où la voiture pourra se placer)
 	 * 0 pour un mur
-	 * 2 pour un obstacle (il peut être un bonus et donc modifier les paramètres de voiture, il peut
-	 * se déplacer ?)
+	 * 2 matérialise la ligne d'arrivée
 	 */
 	private int[][] tab;
 	
-	// FIXME écrire un commentaire
+	// FIXME (Fixed) écrire un commentaire
+	/**
+	 * entier à choisir pour sélectionner un niveau
+	 */
 	private int niveau;
 	
 	
-	// FIXME écrire un commentaire
+	// FIXME (Fixed) écrire un commentaire
 	//circuit de base
+	/**
+	 * construit un tableau d'entiers matérialisant le circuit en fonction de l'entier niveau passé en paramètre
+	 * @param niveau
+	 */
 	public Circuit(int niveau)
 	{	
 		switch (niveau)
@@ -32,10 +39,10 @@ public class Circuit
 		case 1 :
 			this.tab = new int[][] 
 				
-				{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
-				{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
-				{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
-				{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
+				{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,0},
+				{0,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,0},
+				{0,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,0},
 				{0,1,1,1,1,0,0,0,0,0,0,0,1,1,1,1,0},
 				{0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0},
 				{0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0},
@@ -54,12 +61,12 @@ public class Circuit
 		case 2:
 			this.tab = new int[][] 
 					
-					{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+					{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 					{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 					{0,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,0},
 					{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 					{0,1,1,1,1,0,1,0,0,0,0,0,1,1,1,1,0},
-					{0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,1,0},
+					{0,1,1,1,0,0,1,0,0,0,0,0,0,2,2,2,0},
 					{0,1,1,1,0,0,1,1,1,1,0,0,0,1,1,1,0},
 					{0,1,1,1,0,0,0,0,0,1,0,0,0,1,1,1,0},
 					{0,1,1,1,0,0,0,0,0,1,1,0,0,1,1,1,0},
@@ -76,7 +83,7 @@ public class Circuit
 		case 3://a faire
 				this.tab = new int[][] 
 					
-					{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+					{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 					{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 					{0,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,0},
 					{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
@@ -100,6 +107,27 @@ public class Circuit
 		}
 	}
 	
-	// FIXME redéfinir toString et écrire un test
+	// FIXME (fixed)redéfinir toString et écrire un test
+	/**
+	 * affichage du tableau de Circuit
+	 */
+	public String toString()
+	{
+		int i, j;
+		i=0;
+		String s="";
+		while (i<Position.MAX  )
+		{
+			j=0;
+			while (j<Position.MAX)
+			{
+				s=s + this.tab[i][j];
+				j++;
+			}
+			s=s+"\n";
+			i++;
+		}
+		return s;
+	}
 
 }

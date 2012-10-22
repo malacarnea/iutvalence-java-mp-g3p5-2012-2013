@@ -2,7 +2,7 @@ package fr.iutvalence.java.projets.CourseVoiture;
 
 
 /**
- *classe principale du programme qui donne le déroulement d'une partie (dérouelement du jeu)
+ *classe principale du programme qui donne le deroulement d'une partie (deroulement du jeu)
  *
  * @author malacara
  *
@@ -19,69 +19,73 @@ public class Partie
 	
 	// FIXME corriger le commentaire
 	/**
-	 * variable determinant le nombre de tours qui doit être fait pour réussir la course/valider le circuit
+	 * entier determinant le nombre de tours qui doit être fait pour réussir la course/valider le circuit
 	 * elle est définie par le joueur
 	 */
-	// FIXME respecter les conventions d'écriture
-	// FIXME renommer l'attribut
-	private int nbtour;
+	// FIXME (FIXED) respecter les conventions d'écriture
+	// FIXME (FIXED)renommer l'attribut
+	private int nbTour;
 	
-	// FIXME corriger le commentaire
+	// FIXME (FIXED) corriger le commentaire
 	/**
-	 * variable qui compte le nombre de tour actuel
+	 * dans une Partie, indique le nombre de tours effectues par la voiture jusqu'a present, 
+	 * doit etre inferieur ou egal a nbTour 
 	 */
-	// FIXME respecter les conventions d'écriture
-	// FIXME renommer l'attribut	
-	private int nbtourcourant;
+	// FIXME (FIXED)respecter les conventions d'écriture
+	// FIXME (FIXED) renommer l'attribut	
+	private int nbTourCourant;
 	
 	// FIXME corriger le commentaire
 	/**
 	 * variable qui détermine quand est-ce que la partie est finie
-	 * si quitter = 1 --> on stop la boucle pour terminer la partie
-	 * si quitter = 0 --> on continue
+	 * si quitter = true --> on stop la boucle pour terminer la partie
+	 * si quitter = false --> on continue
 	 */
 	private boolean quitter; 
 	
-	// FIXME corriger le commentaire
+	// FIXME (FIXED) corriger le commentaire
 	/**
-	 * déclaration d'une voiture, qui est choisie par l'utilisateur en fonction de sa couleur
+	 * déclaration d'une voiture, qui est choisie par l'utilisateur et est definie par sa taille, sa position et sa couleur
 	 */
 	private Voiture voiture;
 	
-	// FIXME compléter le commentaire
+	// FIXME (FIXED)compléter le commentaire 
 	/**
-	 * instanciation des paramètres définissant une partie
-	 * @param nbtour
-	 * @param voiture
+	 * initialise les attributs de Partie, on obtient un objet Partie comprenant les attributs voiture, quitter, nbtour, nbtourcourant
+	 * nbtourcourant : initialisé ici, changera au cours de la partie
+	 * quitter : indique si on a cliqué sur le bouton qui permet de quitter la Partie, est initialisé à faux 
+	 * @param nbtour qu'on peut choisir en lançant une partie, nbtour prend pour valeur ce qu'il y a en paramètre
+	 * @param voiture : crée une Voiture de position p (coordonnées (x,y)), de taille 1 et de couleur c
 	 */
-	public Partie(int nbtour, /* int nbtourcourant, boolean quitter, */ Voiture voiture)
+	public Partie(int nbTour, Voiture voiture)
 	{
 		super();
-		this.nbtour = nbtour;
-		//this.nbtourcourant = nbtourcourant = 0;
-		//this.quitter = quitter;
+		this.nbTour = nbTour;
+		this.nbTourCourant = 0;
+		this.quitter = false;
 		this.voiture = voiture;
 		
-		// FIXME tous les attributs doivent être initialisés
+		// FIXME ( FIXED)tous les attributs doivent être initialisés
 	}	
 	
 
 	/**
-	 * boucle qui incrémente la variable nbtourcourant à chaque fois qu'on a fais un tour
+	 * methode qui incrémente la variable nbtourcourant à chaque fois qu'on a fais un tour
 	 */
-	// FIXME respecter les conventions d'écriture
+	// FIXME (FIXED) respecter les conventions d'écriture
 	public int getNbtourcourant()
 	{ 
 		/* Boucle : tant qu'on a pas fais le nb de tour d'une course prédéfinie avant par l'utilsateur, 
 		 * et qu'on ne quitte pas, on continue 
 		 */
-		while (nbtourcourant != nbtour && quitter != false)
+		while ((nbTourCourant != nbTour) && (quitter != false))
+		{
 			
 			// Lancement de la course
 			
-			nbtourcourant=nbtourcourant+1;
-		return nbtourcourant;
-		
+			nbTourCourant=nbTourCourant+1;
+		}
+		return nbTourCourant;
 	}
 			
 	//FIN : on clique sur "exit" dans la partie
@@ -92,6 +96,4 @@ public class Partie
  * comptabiliser le nbtourcourant et la fin de la course.
  */
 
-/* faire une classe bonus ? pour determiner les paramètres qui changerons sur la voiture en fonction du
- * bonus qui a été pris par le joueur. 
- */
+
