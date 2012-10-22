@@ -3,9 +3,19 @@ package fr.iutvalence.java.projets.CourseVoiture;
 // FIXME corriger le commentaire
 /**
  * classe informant sur la postion de la voiture sur le circuit
+ * donne l'abscisse x et l'ordonnée y
  */
 public class Position
 {
+	/**
+	 * constante donnant la borne inferieur, est la même pour x et y (le circuit étant carré)
+	 */
+	private final static int MIN= 0;
+	/**
+	 * constante donnant la borne supérieur, est la même pour x et y
+	 */
+	private final static int MAX= 16;
+	
 	/**
 	 * x est la position de la voiture en abscisse (le numéro de la colonne)
 	 */
@@ -18,39 +28,69 @@ public class Position
 
 	// FIXME corriger le commentaire
 	/**
-	 * instanciation de x et de y
-	 * @param x
-	 * @param y
+	 * crée un objet Position prenant en paramètre l'abscisse et l'ordonnée
+	 * retourne une exception si x0 ou y0 ne sont pas dans les bornes
+	 * @param x0
+	 * @param y0 
 	 */
-	public Position(int x, int y)
+	public Position(int x0, int y0) throws CIE
 	{
-		super();
-		this.x = x;
-		this.y = y;
+		if ((x0<MIN) || (y0<MIN)|| (x0>MAX) || (y0>MAX))
+			throw new CIE();
+		this.x = x0;
+		this.y = y0;
 	}
 
 	/**
 	 * méthode qui permet de retourner le numéro de la colonne
-	 * @return
+	 * @return abscisse
 	 */
 	public int getX()
 	{
-		return x;
+		return this.x;
 	}
 
 	/**
 	 * méthode qui permet de retourner le numéro de la ligne
-	 * @return
+	 * @return ordonnée
 	 */
 	public int getY()
 	{
-		return y;
+		return this.y;
 	}
+	
+	
 	
 	// Position translate(int dx, int dy){...}
 	
-	// FIXME redéfinir toString
+	// FIXME (FIXED) redéfinir toString
+	/**
+	 * affiche la position de la Voiture
+	 */
+	public String toString()
+	{
+		return "Votre position actuelle est : (" + this.x+ ", "+ this.y+")";
+	}
 	
-	// FIXME redéfinir equals et hashCode
+	// FIXME (fixed) redéfinir equals et hashCode
+	/**
+	 * compare 2 positions 
+	 */
+	public boolean equals (Object o)
+	{
+		if (o == null) return false;
+		if (o == this) return true;
+		if (!(o instanceof Position)) return false;
+		Position p = (Position) o;
+		return (this.x == p.x)&&(this.y == p.y);
+	}
+	
+	/**
+	 * ???
+	 */
+	public int hashCode ()
+	{
+		return this.x+this.y;
+	}
 	
 }
