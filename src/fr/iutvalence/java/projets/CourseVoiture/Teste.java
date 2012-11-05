@@ -9,16 +9,21 @@ public class Teste {
 	public static void main(String[] args) throws CIE 
 	{
 		// TODO Auto-generated method stub
-	//	Voiture v = new Voiture()
-		//int n=2;
 		Position p=new Position(5, 10);
+		int n=2;
+		Voiture v = new Voiture(p,n);
+		
+		
 		String str;
 		System.out.println("teste");
 	/*	Circuit cir=new Circuit(n);
 		str=cir.toString();
 		System.out.println(str);*/
 		
-		str=p.toString();
+		v.haut(p);
+		v.droite(p);
+		
+		str=v.toString();
 		System.out.println(str);
 	}
 

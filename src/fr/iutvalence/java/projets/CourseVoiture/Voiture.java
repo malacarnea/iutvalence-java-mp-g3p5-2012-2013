@@ -3,7 +3,7 @@ package fr.iutvalence.java.projets.CourseVoiture;
 /**
  * classe qui définit les caractéristique d'une voiture
  */
-public class Voiture extends Position
+public class Voiture 
 {
 	/**
 	 * chaque voiture est définie par sa couleur qui ne change pas pour le moment
@@ -13,6 +13,7 @@ public class Voiture extends Position
 	// FIXME (FIXED) ne pas utiliser de caractère pour représenter la couleur, mais des constantes
 	private final int couleur;
 	
+	private Position pos;
 	// FIXME (Fixed) laisser la taille de côté pour le moment
 	/**
 	 * la taille d'une voiture est calculée par le nombre de cases qu'elle prend dans la grille.
@@ -36,9 +37,9 @@ public class Voiture extends Position
 	 * @param couleur : entier correspondant à une couleur
 	 * @throws CIE 
 	 */
-	public Voiture(int x, int y,int c) throws CIE
+	public Voiture(Position p,int c) throws CIE
 	  {
-	  	super(x, y);
+	  	this.pos=p;
 	  	this.couleur = c;
 	  	//this.taille = 1;
 	  }
@@ -53,57 +54,65 @@ public class Voiture extends Position
 		return this.couleur;
 	}
 	 
-	 // FIXME (Fixed) corriger le commentaire
-	/**
-	 * permet d'acceder à l'attribut Position de la classe Voiture depuis l'extérieur de la classe
-	 * @return Position
-	 */
-//	public Position getPosition()
-//	{
-//		return position;
-//	}
-	
-	// FIXME (Fixed) corriger le commentaire
-	/**
-	 * permet de modifier la position depuis l'extérieur
-	 * @param position
-	 */
-//	public void setPosition(Position position)
-//	{
-//		this.position = position;
-//	}
+
 
 	// Actions effectuées par la voiture
 	
-	/**
-	 * monte la voiture d'une case vers le haut
-	 */
-	public void haut()
+	  public Position getPos()
 	{
-	 // la position de la voiture {x,y} <-- {x,y+1} 
+		return pos;
 	}
-	
+
 	/**
-	 * descend la voiture d'une case vers le bas
-	 */	
-	public void bas()
-	  {
+		 * monte la voiture d'une case vers le haut
+		 */
+		public void haut(Position p)
+		{
 		 // la position de la voiture {x,y} <-- {x,y-1} 
-	  }
-	
-	/**
-	 * décale la voiture d'une case vers la gauche
-	 */
-	public void gauche()
-	  {
-		 // la position de la voiture {x,y} <-- {x-1,y} 
-	  }
-	
-	/**
-	 * décale la voiture d'une case vers la droite
-	 */
-	public void droite()
-	  {
-		 // la position de la voiture {x,y} <-- {x+1,y} 
-	  }
+			int i;
+			i=p.getY();
+			p.setY(i-1);
+		}
+		
+		/**
+		 * descend la voiture d'une case vers le bas
+		 */	
+		public void bas(Position p)
+		  {
+			 // la position de la voiture {x,y} <-- {x,y+1} 
+			int i;
+			i=p.getY();
+			p.setY(i+1);
+		  }
+		
+		/**
+		 * décale la voiture d'une case vers la gauche
+		 */
+		public void gauche(Position p)
+		  {
+			 // la position de la voiture {x,y} <-- {x-1,y} 
+			int i;
+			i=p.getX();
+			p.setX(i-1);
+		  }
+		
+		/**
+		 * décale la voiture d'une case vers la droite
+		 */
+		public void droite(Position p)
+		  {
+			 // la position de la voiture {x,y} <-- {x+1,y} 
+			int i;
+			i=p.getX();
+			p.setX(i+1);
+		  }
+		
+		/**
+		 * affiche la position et la couleur de la voiture
+		 */
+		public String toString()
+		{
+			return "position voiture : ("+this.pos.getX()+","+this.pos.getY()+") couleur "+this.couleur;
+		}
+		
 }

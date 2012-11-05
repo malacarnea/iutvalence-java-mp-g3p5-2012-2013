@@ -7,24 +7,17 @@ package fr.iutvalence.java.projets.CourseVoiture;
  */
 public class Position
 {
-	/**
-	 * constante donnant la borne inferieur, est la même pour x et y (le circuit étant carré)
-	 */
-		public final static int MIN= 0;
-	/**
-	 * constante donnant la borne supérieur, est la même pour x et y
-	 */
-	public final static int MAX= 17;
+	
 	
 	/**
 	 * x est la position de la voiture en abscisse (le numéro de la colonne)
 	 */
-	private final int x;
+	private int x;
 
 	/**
 	 * y est la position de la voiture en ordonnée (le numéro de la ligne)
 	 */
-	private final int y;
+	private int y;
 
 	// FIXME (fixed) corriger le commentaire
 	/**
@@ -35,7 +28,7 @@ public class Position
 	 */
 	public Position(int x0, int y0) throws CIE
 	{
-		if ((x0<MIN) || (y0<MIN)|| (x0>MAX) || (y0>MAX))
+		if ((x0<Circuit.MIN) || (y0<Circuit.MIN)|| (x0>Circuit.MAX) || (y0>Circuit.MAX))
 			throw new CIE();
 		this.x = x0;
 		this.y = y0;
@@ -61,8 +54,24 @@ public class Position
 	
 	
 	
-	// Position translate(int dx, int dy){...}
-	
+	/**
+	 * permet de modifier l'abscisse d'une position
+	 * @param x0
+	 */
+	public void setX(int x0)
+	{
+		this.x = x0;
+	}
+
+	/**
+	 * permet de modifier l'ordonnée d'une position
+	 * @param y0
+	 */
+	public void setY(int y0)
+	{
+		this.y = y0;
+	}
+
 	// FIXME (FIXED) redéfinir toString
 	/**
 	 * affiche la position de la Voiture
@@ -93,4 +102,8 @@ public class Position
 		return this.x+this.y;
 	}
 	
+	
+	
+	
+	// Position translate(int dx, int dy){...}
 }
