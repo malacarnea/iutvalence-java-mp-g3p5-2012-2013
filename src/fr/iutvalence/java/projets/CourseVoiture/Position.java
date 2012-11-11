@@ -1,35 +1,32 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
-// FIXME (fixed) corriger le commentaire
 /**
- * classe informant sur la postion de la voiture sur le circuit
- * donne l'abscisse x et l'ordonnée y
+ * Position définie par un couple de coordonnees (x,y)
  */
 public class Position
 {
 	
 	
 	/**
-	 * x est la position de la voiture en abscisse (le numéro de la colonne)
+	 * Abscisse
 	 */
 	private int x;
 
 	/**
-	 * y est la position de la voiture en ordonnée (le numéro de la ligne)
+	 * Ordonnée
 	 */
 	private int y;
 
-	// FIXME (fixed) corriger le commentaire
 	/**
-	 * crée un objet Position prenant en paramètre l'abscisse et l'ordonnée
-	 * retourne une exception si x0 ou y0 ne sont pas dans les bornes
+	 * crée un objet d'abscisse et d'ordonnée fixées
 	 * @param x0
 	 * @param y0 
 	 */
-	public Position(int x0, int y0) throws CIE
+	// FIXME ne pas soulever d'exception ici (ne pas rendre Position dépendante de Circuit)
+	public Position(int x0, int y0) throws PositionInvalideException
 	{
 		if ((x0<Circuit.MIN) || (y0<Circuit.MIN)|| (x0>Circuit.MAX) || (y0>Circuit.MAX))
-			throw new CIE();
+			throw new PositionInvalideException();
 		this.x = x0;
 		this.y = y0;
 	}
@@ -72,18 +69,18 @@ public class Position
 		this.y = y0;
 	}
 
-	// FIXME (FIXED) redéfinir toString
 	/**
-	 * affiche la position de la Voiture
+	 * @see java.lang.Object#toString()
 	 */
 	public String toString()
 	{
 		return "Votre position actuelle est : (" + this.x+ ", "+ this.y+")";
 	}
 	
-	// FIXME (fixed) redéfinir equals et hashCode
+	
+	// FIXME compléter le commentaire (dire en quoi 2 positions sont égales)
 	/**
-	 * compare 2 positions 
+	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	public boolean equals (Object o)
 	{
@@ -94,16 +91,14 @@ public class Position
 		return (this.x == p.x)&&(this.y == p.y);
 	}
 	
+	
 	/**
-	 * ???
+	 * @see java.lang.Object#hashCode()
 	 */
 	public int hashCode ()
 	{
 		return this.x+this.y;
 	}
-	
-	
-	
 	
 	// Position translate(int dx, int dy){...}
 }

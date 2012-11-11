@@ -1,14 +1,15 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
-public class Teste {
+public class Test {
 
 	/**
 	 * @param args
-	 * @throws CIE 
+	 * @throws PositionInvalideException 
 	 */
-	public static void main(String[] args) throws CIE 
+	
+	// FIXME le main ne peut pas soulever d'exception (cela n'a pas de sens)
+	public static void main(String[] args) throws PositionInvalideException 
 	{
-		// TODO Auto-generated method stub
 		Position p=new Position(5, 10);
 		int n=2;
 		Voiture v = new Voiture(p,n);

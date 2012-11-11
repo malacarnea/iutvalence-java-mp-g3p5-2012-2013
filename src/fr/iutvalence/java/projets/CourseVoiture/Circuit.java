@@ -18,7 +18,6 @@ public class Circuit
 	 */
 	public final static int MAX= 17;
 	
-	// FIXME définir des constantes pour le contenu des cases
 	/**
 	 * espace où roule la voiture
 	 */
@@ -75,7 +74,8 @@ public class Circuit
 			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
 			{MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR}
 		};
-	// FIXME (FIXED)corriger le commentaire
+	
+	// FIXME corriger le commentaire (à discuter)
 	/**
 	 * Il faut faire un tableau / une grille d'entiers (17/17, le point d'origine est en haut à gauche) 
 	 * qui nous permettra de determiner le circuit :
@@ -86,15 +86,13 @@ public class Circuit
 	 */
 	private int[][] tab;
 	
-	// FIXME (Fixed) écrire un commentaire
 	/**
 	 * entier à choisir pour sélectionner un niveau
 	 */
 	private int niveau;
 	
 	
-	// FIXME (Fixed) écrire un commentaire
-	//circuit de base
+	// FIXME corriger le commentaire  (à discuter)
 	/**
 	 * construit un tableau d'entiers matérialisant le circuit en fonction de l'entier niveau passé en paramètre
 	 * @param niveau
@@ -104,9 +102,9 @@ public class Circuit
 		this.tab=cir;
 	}
 	
-	// FIXME (fixed)redéfinir toString et écrire un test
+	
 	/**
-	 * affichage du tableau de Circuit
+	 * @see java.lang.Object#toString()
 	 */
 	public String toString()
 	{

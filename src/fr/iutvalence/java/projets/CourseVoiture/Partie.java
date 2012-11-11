@@ -17,7 +17,6 @@ public class Partie
 //DEBUT : quand on appuie sur le bouton "start"
 //choix de la voiture, choix de tours de circuit
 	
-	// FIXME (FIXED)corriger le commentaire
 	/**
 	 * entier determinant le nombre de tours qui doit être fait pour réussir la course/valider le circuit
 	 * elle est définie par le joueur
@@ -96,7 +95,6 @@ public class Partie
 	/**
 	 * methode qui incrémente la variable nbtourcourant à chaque fois qu'on a fais un tour
 	 */
-	// FIXME (FIXED) respecter les conventions d'écriture
 	public int tourActuel()
 	{ 
 		/* Boucle : tant qu'on a pas fais le nb de tour d'une course prédéfinie avant par l'utilsateur, 
