@@ -5,6 +5,7 @@ package fr.iutvalence.java.projets.CourseVoiture;
  */
 public class Voiture
 {
+	
 	/**
 	 * chaque voiture est définie par sa couleur qui ne change pas pour le moment la couleur est désignée par une
 	 * constante
@@ -12,13 +13,16 @@ public class Voiture
 	 */
 	private final int couleur;
 
-	// FIXME commentaire
+	// FIXME (fixed) commentaire
+	/**
+	 * donne la position (x, y) de la voiture 
+	 */
 	private Position position;
 
-	// FIXME compléter le commentaire
+	// FIXME (fixed)compléter le commentaire
 	/**
 	 * création de voiture de couleur et de position données
-	 * 
+	 * @param position : coordonnées de la voiture
 	 * @param couleur
 	 *            : entier correspondant à une couleur
 	 */
@@ -29,17 +33,21 @@ public class Voiture
 
 	}
 
-	// FIXME corriger le commentaire (à discuter)
+	// FIXME(fixed) corriger le commentaire (à discuter)
 	/**
-	 * permet d'acceder à l'attribut couleur de la classe Voiture depuis l'extérieur de la classe
+	 * permet d'obtenir la couleur de la voiture
 	 * 
-	 * @return couleur (un entier)
+	 * @return couleur de la voiture
 	 */
 	public int getCouleur()
 	{
 		return this.couleur;
 	}
 
+	/**
+	 * récupère la position d'une voiture
+	 * @return  position de la voiture
+	 */
 	public Position getPosition()
 	{
 		return position;

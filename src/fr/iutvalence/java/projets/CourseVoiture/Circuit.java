@@ -6,7 +6,6 @@ package fr.iutvalence.java.projets.CourseVoiture;
 public class Circuit
 {
 	
-	// reste à définir des méthodes...
 	
 	/**
 	 * constante donnant la borne inferieur, est la même pour x et y (le circuit étant carré)
@@ -21,19 +20,29 @@ public class Circuit
 	/**
 	 * espace où roule la voiture
 	 */
-	private final static int ROUTE=1;
+	public final static int ROUTE=1;
 	
 	/**
 	 * un mur
 	 */
-	private final static int MUR=0;
+	public final static int MUR=0;
 	
 	/**
 	 * matérialise la ligne d'arrivée
 	 */
-	private final static int LIGNEA=2;
+	public final static int LIGNEA=2;
 	
-	private final static int [][] C_FACIL= new int [][]
+	/**
+	 * une voiture sur le circuit
+	 */
+	public final static int VOITURE=3;
+	
+	
+	
+	/**
+	 * définition d'un circuit facile
+	 */
+	public final static int [][] C_FACIL= new int [][]
 			
 			{{MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR},
 			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,LIGNEA,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
@@ -54,15 +63,18 @@ public class Circuit
 			{MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR}
 		};
 	
-	private final static int [][] C_MOYEN = new int[][] 
+	/**
+	 * circuit moyen
+	 */
+	public final static int [][] C_MOYEN = new int[][] 
 			
 			{{MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR,MUR},
-			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
-			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
-			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
-			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,MUR,ROUTE,MUR,MUR,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
-			{MUR,ROUTE,ROUTE,ROUTE,MUR,MUR,ROUTE,MUR,MUR,MUR,MUR,MUR,MUR,LIGNEA,LIGNEA,LIGNEA,MUR},
-			{MUR,ROUTE,ROUTE,ROUTE,MUR,MUR,ROUTE,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,MUR},
+			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,LIGNEA,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
+			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,LIGNEA,ROUTE,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
+			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,LIGNEA,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
+			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,MUR,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,ROUTE,MUR},
+			{MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,MUR},
+			{MUR,ROUTE,ROUTE,ROUTE,MUR,ROUTE,ROUTE,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,MUR},
 			{MUR,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,MUR,MUR,ROUTE,MUR,MUR,MUR,ROUTE,ROUTE,ROUTE,MUR},
 			{MUR,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,MUR,MUR,ROUTE,ROUTE,MUR,MUR,ROUTE,ROUTE,ROUTE,MUR},
 			{MUR,ROUTE,ROUTE,ROUTE,MUR,MUR,MUR,MUR,MUR,MUR,ROUTE,MUR,MUR,ROUTE,ROUTE,ROUTE,MUR},
@@ -94,8 +106,8 @@ public class Circuit
 	
 	// FIXME corriger le commentaire  (à discuter)
 	/**
-	 * construit un tableau d'entiers matérialisant le circuit en fonction de l'entier niveau passé en paramètre
-	 * @param niveau
+	 * création d'un circuit avec une matrice cir donnée
+	 * @param circuit
 	 */
 	public Circuit(int [][] cir)
 	{
@@ -103,6 +115,29 @@ public class Circuit
 	}
 	
 	
+	/**
+	 * récupère se qu'il y a à une position donnée du circuit
+	 * @param p position donnée
+	 * @return valeur contenue dans la case se trouvant à la postion p dans le circuit
+	 */
+	public int recupValeurCase (Position p)
+	{
+		return this.tab [p.getX()][p.getY()];
+	}
+	
+	/**
+	 * modifie la valeur se trouvant à une position donnée
+	 * @param p position donnée
+	 * @param valeur à inserrer à la position p dans le circuit
+	 */
+	public void modifValeurCase (Position p, int valeur)
+	{
+		this.tab  [p.getX()][p.getY()]=valeur;
+	}
+	
+
+
+
 	/**
 	 * @see java.lang.Object#toString()
 	 */

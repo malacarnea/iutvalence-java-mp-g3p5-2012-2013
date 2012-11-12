@@ -1,5 +1,7 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
+import java.util.Random;
+
 
 /**
  *classe principale du programme qui donne le deroulement d'une partie (deroulement du jeu)
@@ -16,6 +18,8 @@ public class Partie
 	
 //DEBUT : quand on appuie sur le bouton "start"
 //choix de la voiture, choix de tours de circuit
+	
+	public enum Deplacement{HAUT, BAS, GAUCHE, DROITE;}
 	
 	/**
 	 * entier determinant le nombre de tours qui doit être fait pour réussir la course/valider le circuit
@@ -118,13 +122,35 @@ public class Partie
 
 public void demarrer()
 {
+	circuit.modifValeurCase(voiture.getPosition(), circuit.VOITURE );
+
 	while (!quitter)
 	{
-		// ...
+		int deplacement = new Random().nextInt(Deplacement.values().length);
+		
+		//simuler un déplacement
+		switch (deplacement)
+		{
+			case  0:
+			{
+				
+					switch (circuit.recupValeurCase(voiture.getPosition()))
+					{
+						case  Circuit.MUR:
+							break;
+						
+					}
+			}
+			case 1:
+			case 2:
+			case 3:
+		}
 	}
 }
 
+
 }
+
 /* faire une classe tour ? pour determiner le fin d'un tour en fonction du circuit et donc 
  * comptabiliser le nbtourcourant et la fin de la course.
  */

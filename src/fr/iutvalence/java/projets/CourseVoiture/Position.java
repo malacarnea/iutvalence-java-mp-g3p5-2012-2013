@@ -6,7 +6,9 @@ package fr.iutvalence.java.projets.CourseVoiture;
 public class Position
 {
 	
+	public final static int XINIT=5;
 	
+	public final static int YINIT=3;
 	/**
 	 * Abscisse
 	 */
@@ -16,17 +18,25 @@ public class Position
 	 * Ordonnée
 	 */
 	private int y;
+	
+	/**
+	 * construction d'une position initiale
+	 */
+	public Position ()
+	{
+		this.x=XINIT;
+		this.y=YINIT;
+	}
 
 	/**
 	 * crée un objet d'abscisse et d'ordonnée fixées
 	 * @param x0
 	 * @param y0 
 	 */
-	// FIXME ne pas soulever d'exception ici (ne pas rendre Position dépendante de Circuit)
-	public Position(int x0, int y0) throws PositionInvalideException
+	// FIXME (fixed) ne pas soulever d'exception ici (ne pas rendre Position dépendante de Circuit)
+	public Position(int x0, int y0) 
 	{
-		if ((x0<Circuit.MIN) || (y0<Circuit.MIN)|| (x0>Circuit.MAX) || (y0>Circuit.MAX))
-			throw new PositionInvalideException();
+		
 		this.x = x0;
 		this.y = y0;
 	}
