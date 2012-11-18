@@ -19,6 +19,7 @@ public class Partie
 //DEBUT : quand on appuie sur le bouton "start"
 //choix de la voiture, choix de tours de circuit
 	
+	// FIXME déclarer l'énumération dans un fichier à part
 	public enum Deplacement{HAUT, BAS, GAUCHE, DROITE;}
 	
 	/**
@@ -97,16 +98,19 @@ public class Partie
 
 
 	/**
-	 * methode qui incrémente la variable nbtourcourant à chaque fois qu'on a fais un tour
+	 * methode qui incrémente la variable nbtourcourant à chaque fois qu'on a fait un tour
 	 */
 	public int tourActuel()
 	{ 
 		/* Boucle : tant qu'on a pas fais le nb de tour d'une course prédéfinie avant par l'utilsateur, 
 		 * et qu'on ne quitte pas, on continue 
 		 */
+		
+		// FIXME on peut simplifier (à discuter)
 		int nbTC, nbT;
 		nbTC=getNbTourCourant();
 		nbT=getNbTours();
+		//FIXME pourquoi une boucle ici ?
 		while ((nbTC != nbT) && (this.quitter != false))
 		{
 			
@@ -124,6 +128,7 @@ public void demarrer()
 {
 	circuit.modifValeurCase(voiture.getPosition(), circuit.VOITURE );
 
+	// FIXME réfléchir à l'algorithme de déroulement d'une partie
 	while (!quitter)
 	{
 		int deplacement = new Random().nextInt(Deplacement.values().length);

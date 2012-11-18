@@ -1,3 +1,4 @@
+// FIXME déplacer dans un autre paquetage
 package fr.iutvalence.java.projets.CourseVoiture;
 
 public class Test {
@@ -7,7 +8,6 @@ public class Test {
 	 * @throws PositionInvalideException 
 	 */
 	
-	// FIXME (fixed) le main ne peut pas soulever d'exception (cela n'a pas de sens)
 	public static void main(String[] args) 
 	{
 		try{

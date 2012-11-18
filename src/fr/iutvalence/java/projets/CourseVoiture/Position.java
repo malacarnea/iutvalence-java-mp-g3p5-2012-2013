@@ -33,7 +33,6 @@ public class Position
 	 * @param x0
 	 * @param y0 
 	 */
-	// FIXME (fixed) ne pas soulever d'exception ici (ne pas rendre Position dépendante de Circuit)
 	public Position(int x0, int y0) 
 	{
 		
