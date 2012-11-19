@@ -19,8 +19,8 @@ public class Partie
 //DEBUT : quand on appuie sur le bouton "start"
 //choix de la voiture, choix de tours de circuit
 	
-	// FIXME déclarer l'énumération dans un fichier à part
-	public enum Deplacement{HAUT, BAS, GAUCHE, DROITE;}
+	// FIXME (fixed) déclarer l'énumération dans un fichier à part
+//	public enum Deplacement{HAUT, BAS, GAUCHE, DROITE;}
 	
 	/**
 	 * entier determinant le nombre de tours qui doit être fait pour réussir la course/valider le circuit
@@ -73,24 +73,6 @@ public class Partie
 	}
 
 
-	public boolean isQuitter()
-	{
-		return quitter;
-	}
-
-
-	public Voiture getVoiture()
-	{
-		return voiture;
-	}
-
-
-	public Circuit getCircuit()
-	{
-		return circuit;
-	}
-	
-
 	public int getNbTourCourant()
 	{
 		return nbToursCourant;
@@ -100,57 +82,64 @@ public class Partie
 	/**
 	 * methode qui incrémente la variable nbtourcourant à chaque fois qu'on a fait un tour
 	 */
-	public int tourActuel()
-	{ 
-		/* Boucle : tant qu'on a pas fais le nb de tour d'une course prédéfinie avant par l'utilsateur, 
-		 * et qu'on ne quitte pas, on continue 
-		 */
-		
-		// FIXME on peut simplifier (à discuter)
-		int nbTC, nbT;
-		nbTC=getNbTourCourant();
-		nbT=getNbTours();
-		//FIXME pourquoi une boucle ici ?
-		while ((nbTC != nbT) && (this.quitter != false))
-		{
-			
-			// Lancement de la course
-			
-			this.nbToursCourant=this.nbToursCourant+1;
-		}
-		return this.nbToursCourant;
-	}
+//	public int tourActuel()
+//	{ 
+//		/* Boucle : tant qu'on a pas fais le nb de tour d'une course prédéfinie avant par l'utilsateur, 
+//		 * et qu'on ne quitte pas, on continue 
+//		 */
+//		
+//		// FIXME on peut simplifier (à discuter)
+//		int nbTC, nbT;
+//		nbTC=getNbTourCourant();
+//		nbT=getNbTours();
+//		//FIXME pourquoi une boucle ici ?
+//		while ((nbTC != nbT) && (this.quitter != false))
+//		{
+//			
+//			// Lancement de la course
+//			
+//			this.nbToursCourant=this.nbToursCourant+1;
+//		}
+//		return this.nbToursCourant;
+//	}
 			
 	//FIN : on clique sur "exit" dans la partie
 
 
 public void demarrer()
 {
-	circuit.modifValeurCase(voiture.getPosition(), circuit.VOITURE );
+	Position posaChanger;
 
 	// FIXME réfléchir à l'algorithme de déroulement d'une partie
-	while (!quitter)
+	
+	//placement
+	this.circuit.modifValeurCase(this.voiture.getPosition(), this.circuit.VOITURE );
+	//depart
+	
+	//course
+	while (!this.quitter)
 	{
-		int deplacement = new Random().nextInt(Deplacement.values().length);
-		
 		//simuler un déplacement
-		switch (deplacement)
-		{
-			case  0:
-			{
+		Deplacement dep = Deplacement.alea();
+		
+		// traiter le déplacement (bouger la voiture si on peut, voir si le tourcourant a changé
+		posaChanger=this.voiture.getPosition().translate(dep);
+		if (circuit.estDansCircuit(posaChanger) && this.circuit.recupValeurCase(posaChanger)!=Circuit.MUR)
+			this.voiture.setPosition(posaChanger);
 				
-					switch (circuit.recupValeurCase(voiture.getPosition()))
-					{
-						case  Circuit.MUR:
-							break;
-						
-					}
-			}
-			case 1:
-			case 2:
-			case 3:
-		}
+		
+		
+		
+
+		// réAfficher le circuit
+		
+		
+		// tester la fin de la patrie
+		if (this.nbToursCourant>this.nbTours)
+			this.quitter=true;
 	}
+	
+	//arrivée
 }
 
 

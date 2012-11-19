@@ -135,7 +135,18 @@ public class Circuit
 		this.tab  [p.getX()][p.getY()]=valeur;
 	}
 	
-
+	/**
+	 * indique si une position est dans les bornes du circuit
+	 * @param posaTester : position à tester
+	 * @return vrai si on est dans le circuit faux sinon
+	 */
+	public boolean estDansCircuit(Position posaTester)
+	{
+		if (posaTester.getY()<Circuit.MIN || posaTester.getY()>Circuit.MAX || posaTester.getX()<Circuit.MIN || posaTester.getX()>Circuit.MAX)
+			return false;
+		else
+			return true;
+	}
 
 
 	/**

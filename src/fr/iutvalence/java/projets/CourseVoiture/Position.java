@@ -77,6 +77,9 @@ public class Position
 	{
 		this.y = y0;
 	}
+	
+	
+
 
 	/**
 	 * @see java.lang.Object#toString()
@@ -109,5 +112,21 @@ public class Position
 		return this.x+this.y;
 	}
 	
-	// Position translate(int dx, int dy){...}
+	/**
+	 * @param posInit position qu'on veut translater
+	 * @param dx abscisse ou on veut aller
+	 * @param dy
+	 * @return
+	 */
+	public  Position translate(Deplacement dep)
+	{
+		switch (dep)
+		{
+			case HAUT: return new Position(this.x, this.y-1);
+			case BAS: return new Position (this.x, this.y+1);
+			case GAUCHE : return new Position (this.x-1, this.y);
+			default : return new Position (this.x+1, this.y);
+		}
+		
+	}
 }

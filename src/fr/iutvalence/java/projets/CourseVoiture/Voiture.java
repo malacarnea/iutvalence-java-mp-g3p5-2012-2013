@@ -51,50 +51,21 @@ public class Voiture
 	{
 		return position;
 	}
+	
+	
 
 	/**
-	 * monte la voiture d'une case vers le haut
+	 * modifie la position courante
+	 * @param position : nouvelle position
 	 */
-	public void haut(Position p)
+	public void setPosition(Position position)
 	{
-		// la position de la voiture {x,y} <-- {x,y-1}
-		int i;
-		i = p.getY();
-		p.setY(i - 1);
+		this.position = position;
 	}
 
-	/**
-	 * descend la voiture d'une case vers le bas
-	 */
-	public void bas(Position p)
-	{
-		// la position de la voiture {x,y} <-- {x,y+1}
-		int i;
-		i = p.getY();
-		p.setY(i + 1);
-	}
 
-	/**
-	 * décale la voiture d'une case vers la gauche
-	 */
-	public void gauche(Position p)
-	{
-		// la position de la voiture {x,y} <-- {x-1,y}
-		int i;
-		i = p.getX();
-		p.setX(i - 1);
-	}
 
-	/**
-	 * décale la voiture d'une case vers la droite
-	 */
-	public void droite(Position p)
-	{
-		// la position de la voiture {x,y} <-- {x+1,y}
-		int i;
-		i = p.getX();
-		p.setX(i + 1);
-	}
+
 
 	/**
 	 * affiche la position et la couleur de la voiture
