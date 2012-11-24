@@ -1,6 +1,5 @@
 package fr.iutvalence.java.projets.CourseVoiture;
 
-import java.util.Random;
 
 
 /**
@@ -18,9 +17,6 @@ public class Partie
 	
 //DEBUT : quand on appuie sur le bouton "start"
 //choix de la voiture, choix de tours de circuit
-	
-	// FIXME (fixed) déclarer l'énumération dans un fichier à part
-//	public enum Deplacement{HAUT, BAS, GAUCHE, DROITE;}
 	
 	/**
 	 * entier determinant le nombre de tours qui doit être fait pour réussir la course/valider le circuit
