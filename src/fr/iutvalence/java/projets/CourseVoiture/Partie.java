@@ -105,7 +105,12 @@ public class Partie
 public void demarrer()
 {
 	Position posaChanger;
+	
+	String strPos;
+	String strCircuit;
+	int valeurPosAchanger= Circuit.ROUTE;
 
+	Deplacement dep;
 	// FIXME réfléchir à l'algorithme de déroulement d'une partie
 	
 	//placement
@@ -115,26 +120,45 @@ public void demarrer()
 	//course
 	while (!this.quitter)
 	{
-		//simuler un déplacement
-		Deplacement dep = Deplacement.alea();
 		
-		// traiter le déplacement (bouger la voiture si on peut, voir si le tourcourant a changé
-		posaChanger=this.voiture.getPosition().translate(dep);
-		if (circuit.estDansCircuit(posaChanger) && this.circuit.recupValeurCase(posaChanger)!=Circuit.MUR)
-			this.voiture.setPosition(posaChanger);
+		this.nbToursCourant=0;
+		while (this.nbToursCourant<=this.nbTours)
+		{
+		
+			//simuler un déplacement
+			 dep = Deplacement.alea();
+			
+			// traiter le déplacement (bouger la voiture si on peut, voir si le tourcourant a changé
+		
+				posaChanger=this.voiture.getPosition().translate(dep);
 				
-		
-		
-		
+				strPos=posaChanger.toString();
+				System.out.println(strPos);
+				
+				if (this.circuit.recupValeurCase(posaChanger)==Circuit.LIGNEA)		
+					this.nbToursCourant++;
 
-		// réAfficher le circuit
+				
+				if (this.circuit.estDansCircuit(posaChanger) && this.circuit.recupValeurCase(posaChanger)!=Circuit.MUR)
+				{
+					this.circuit.modifValeurCase(this.voiture.getPosition(), valeurPosAchanger );
+					valeurPosAchanger=this.circuit.recupValeurCase(posaChanger);
+					this.voiture.setPosition(posaChanger);
+					this.circuit.modifValeurCase(this.voiture.getPosition(), this.circuit.VOITURE );
+				}
+				
+				System.out.println("tour courant " +this.nbToursCourant);
 		
-		
-		// tester la fin de la patrie
+				// réafficher le circuit
+				strCircuit=this.circuit.toString();
+				System.out.println(strCircuit);
+				
+		}
+		// tester la fin de la partie
 		if (this.nbToursCourant>this.nbTours)
 			this.quitter=true;
 	}
-	
+	System.out.println("Bravo !!!!!!!!");
 	//arrivée
 }
 

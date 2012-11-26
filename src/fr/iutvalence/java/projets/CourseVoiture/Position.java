@@ -90,8 +90,9 @@ public class Position
 	}
 	
 	
-	// FIXME compléter le commentaire (dire en quoi 2 positions sont égales)
-	/**
+	// FIXME (FIXED) compléter le commentaire (dire en quoi 2 positions sont égales)
+	/**teste l'egalité de 2 positions
+	 * renvoie vrai si les 2 positions ont le même x et le même y et faux sinon 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	public boolean equals (Object o)
@@ -122,10 +123,10 @@ public class Position
 	{
 		switch (dep)
 		{
-			case HAUT: return new Position(this.x, this.y-1);
-			case BAS: return new Position (this.x, this.y+1);
-			case GAUCHE : return new Position (this.x-1, this.y);
-			default : return new Position (this.x+1, this.y);
+			case HAUT: return new Position(this.x-1, this.y);
+			case BAS: return new Position (this.x+1, this.y);
+			case GAUCHE : return new Position (this.x, this.y-1);
+			default : return new Position (this.x, this.y+1);
 		}
 		
 	}
