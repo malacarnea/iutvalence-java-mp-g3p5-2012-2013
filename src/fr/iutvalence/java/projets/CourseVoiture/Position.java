@@ -90,7 +90,6 @@ public class Position
 	}
 	
 	
-	// FIXME (FIXED) compléter le commentaire (dire en quoi 2 positions sont égales)
 	/**teste l'egalité de 2 positions
 	 * renvoie vrai si les 2 positions ont le même x et le même y et faux sinon 
 	 * @see java.lang.Object#equals(java.lang.Object)
