@@ -57,6 +57,7 @@ public class Partie
 		 */
 		public Partie(int nbTours, Voiture voit, Circuit cir)
 		{
+			// FIXME tous els attributs doivent être initialisés
 			this.nbTours = nbTours;
 			this.nbToursCourant = 0;
 			this.quitter = false;
